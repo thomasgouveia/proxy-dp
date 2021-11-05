@@ -34,14 +34,14 @@ const httpService = new CachedHttpService();
 
 const main = async () => {
   // First call will not use the cache
-  const data = await httpService.get();
+  let data = await httpService.get();
 
   console.log(data);
 
   // Second call will use te cache
-  const cachedData = await httpService.get();
+  data = await httpService.get();
 
-  console.log(cachedData);
+  console.log(data);
 };
 
 main();
